@@ -4,9 +4,9 @@ name: Java CI with Gradle
 # Trigger workflow on push or pull request to master branch
 on:
   push: 
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
 
 # Define jobs to run
 jobs:
@@ -43,4 +43,5 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: latest,${{ github.sha }}
          
