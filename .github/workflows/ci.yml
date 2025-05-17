@@ -36,6 +36,8 @@ jobs:
       run: ./gradlew build
     - name: List files to debug JAR path
       run: ls -R build/libs
+    - name: Rename JAR file to match Dockerfile expectation
+      run: mv build/libs/java-app-1.0-SNAPSHOT.jar build/libs/my-app-1.0-SNAPSHOT.jar
     # Build and push Docker image to Docker Hub
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
