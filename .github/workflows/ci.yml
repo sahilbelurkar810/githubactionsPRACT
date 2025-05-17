@@ -34,7 +34,8 @@ jobs:
     # Build project using Gradle
     - name: Build with Gradle
       run: ./gradlew build
-
+    - name: List files to debug JAR path
+      run: ls -R build/libs
     # Build and push Docker image to Docker Hub
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
